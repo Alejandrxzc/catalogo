@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogo</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 </style>
@@ -16,7 +17,7 @@
     <p>Tu tienda de confianza para alcanzar tus metas</p>
     </header>
             <aside class="carrito-sidebar">
-                <button id="close-cart-btn" class="close-btn">&times;</button>
+                <button id="close-cart-btn" class="close-btn"><i class="fas fa-times"></i></button>
                 <h2>Carrito de Compras</h2>
                 <ul id="cart-items">
                     <li class="cart-empty-msg">Tu carrito está vacío</li>
@@ -340,18 +341,26 @@
     </div>
 
     <div class="social-media">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://wa.me/573105708491" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-    </div>
+    <a href="https://www.facebook.com/zonafitcol" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/zonafitcol" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/573105708491" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
 
     <p class="copyright">&copy; N.A.J. NUTRITION. Todos los derechos reservados.</p>
 </footer>
+        <div id="notification-container"></div>
 
-        <button id="open-cart-btn" class="floating-cart-btn">🛒</button>
+        <button id="open-cart-btn" class="floating-cart-btn">
+    <i class="fas fa-shopping-cart"></i>
+</button>
         <script src="app.js"></script>
 
-    <script src="app.js"></script>
 </body>
 </html>
 </body>

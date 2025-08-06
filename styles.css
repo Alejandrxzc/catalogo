@@ -239,15 +239,16 @@ footer a:hover {
 }
 
 
-.social-media {
-    margin: 30px 0;
-}
-
 .social-media a {
     color: white;
     margin: 0 15px;
-    font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.5em; /* Un poco más grandes */
+    transition: color 0.3s ease; /* Transición suave de color */
+}
+
+.social-media a:hover {
+    color: #e76f51; /* Cambia de color al pasar el mouse */
+    text-decoration: none;
 }
 
 footer .copyright {
@@ -526,4 +527,167 @@ footer .copyright {
     font-size: 1.4em;
     border-top: 2px solid #ffffff;
     margin-top: 10px;
+}
+/* --- Estilos para Controles de Cantidad en el Carrito --- */
+
+/* Contenedor que agrupa los botones +,-, la cantidad y el bote de basura */
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre los elementos */
+    margin-left: 15px;
+}
+
+/* Estilo para el número de la cantidad */
+.item-quantity {
+    font-weight: bold;
+    font-size: 1.1em;
+    min-width: 20px; /* Ancho mínimo para que no se mueva al cambiar de 9 a 10 */
+    text-align: center;
+}
+
+/* Estilo común para los botones + y - */
+.quantity-btn {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 24px;
+    text-align: center;
+}
+
+.quantity-btn:hover {
+    background-color: #ccc;
+}
+
+/* El botón de eliminar que ya teníamos, lo ajustamos un poco */
+.remove-item-btn {
+    background: #e76f51;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex; /* Para centrar el ícono de basura */
+    justify-content: center;
+    align-items: center;
+}
+
+.remove-item-btn:hover {
+    background: #d9534f;
+}
+/* --- Estilos para Notificaciones "Toast" --- */
+
+#notification-container {
+    position: fixed; /* Fijo en la pantalla */
+    bottom: 20px;
+    left: 20px;
+    z-index: 2000; /* Por encima de todo, incluso del carrito flotante */
+    display: flex;
+    flex-direction: column-reverse; /* Las nuevas notificaciones aparecen arriba de las viejas */
+}
+
+.notification {
+    background-color: #616161; /* Un verde que inspira confianza */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    opacity: 0; /* Empieza invisible para la animación */
+    animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s ease-in 3s forwards;
+    /* Animación: entra en 0.5s, espera 3s, sale en 0.5s */
+}
+
+.notification strong {
+    font-weight: 700;
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animación de salida */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        /* No la movemos, solo la desvanecemos */
+    }
+}
+/* ================================================================== */
+/* === ESTILOS PARA DISPOSITIVOS MÓVILES (RESPONSIVE DESIGN) === */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+
+    /* --- Ajustes Generales de Texto --- */
+    /* Reducimos un poco los tamaños de fuente base para que no se vean tan grandes */
+    header h1 {
+        font-size: 2.5em; /* Más pequeño que el 3.2em de escritorio */
+    }
+
+    .hero-content h2 {
+        font-size: 2.8em; /* Más pequeño que el 3.5em de escritorio */
+    }
+
+    .categoria-productos h2 {
+        font-size: 2em;
+    }
+
+
+    /* --- Barra de Navegación --- */
+    /* Hacemos que los enlaces no sean tan anchos y tengan algo más de espacio */
+    nav {
+        padding: 10px;
+    }
+    nav a {
+        margin: 0 8px; /* Reducimos el margen entre enlaces */
+        font-size: 0.9em;
+    }
+
+
+    /* --- Catálogo de Productos --- */
+    /* En lugar de varias columnas, hacemos que cada producto ocupe casi todo el ancho */
+    .producto {
+        width: 85%; /* Hacemos la tarjeta más ancha */
+        max-width: 350px; /* Pero con un límite para que no sea excesiva */
+    }
+
+
+    /* --- Carrito de Compras Lateral --- */
+    /* Hacemos que el carrito ocupe casi toda la pantalla para ser más usable */
+    .carrito-sidebar {
+        width: 95%; /* Ocupa el 95% del ancho de la pantalla */
+    }
+
+
+    /* --- Página de Checkout --- */
+    /* Cambiamos el diseño de 2 columnas a 1 sola columna vertical */
+    .checkout-container {
+        flex-direction: column; /* Apila el formulario y el resumen verticalmente */
+        gap: 20px;
+    }
+    
+    .checkout-page h1 {
+        font-size: 2.2em; /* Reducimos el título principal */
+    }
+
 }
