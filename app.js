@@ -1,82 +1,83 @@
-// Espera a que todo el contenido HTML se cargue antes de ejecutar el script
+// =================================================================
+// ARCHIVO app.js FINAL CON GUARDADO EN LOCALSTORAGE
+// =================================================================
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- VARIABLES Y SELECTORES ---
-    let cart = []; // Este array guardará los productos del carrito
+    // AHORA "cart" se inicializa cargando desde localStorage
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+
     const cartSidebar = document.querySelector('.carrito-sidebar');
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalSpan = document.getElementById('cart-total');
-    const clearCartButton = document.getElementById('clear-cart-btn');
-    const openCartButton = document.getElementById('open-cart-btn'); // AÑADIR ESTA LÍNEA
-    const closeCartButton = document.getElementById('close-cart-btn'); // AÑADIR ESTA LÍNEA
+    const openCartButton = document.getElementById('open-cart-btn');
+    const closeCartButton = document.getElementById('close-cart-btn');
 
     // --- FUNCIONES ---
 
-    // Función para renderizar (dibujar) los productos en el carrito
+    // NUEVA FUNCIÓN: Guarda el estado actual del carrito en localStorage
+    function saveCartToLocalStorage() {
+        localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    }
+
     function renderCart() {
-        // Limpiar el contenedor del carrito
         cartItemsContainer.innerHTML = '';
-
-        if (cart.length === 0) {
-            cartItemsContainer.innerHTML = '<li class="cart-empty-msg">Tu carrito está vacío</li>';
-            cartSidebar.classList.remove('open'); // Oculta el carrito si está vacío
-            return;
-        }
-
         let total = 0;
-        cart.forEach(item => {
-            // Crear el elemento li para cada producto
-            const cartItemLi = document.createElement('li');
-            cartItemLi.innerHTML = `
-                <span>${item.name} (x${item.quantity})</span>
-                <span>$${(item.price * item.quantity).toLocaleString('es-CO')}</span>
-            `;
-            cartItemsContainer.appendChild(cartItemLi);
 
-            // Sumar al total
-            total += item.price * item.quantity;
-        });
-
-        // Actualizar el texto del total
+        if (cart.length > 0) {
+            cart.forEach(item => {
+                const cartItemLi = document.createElement('li');
+                cartItemLi.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <span class="cart-item-name">${item.name}</span>
+                        <span class="cart-item-price">$${item.price.toLocaleString('es-CO')}</span>
+                    </div>
+                    <div class="cart-item-controls">
+                        <span class="cart-item-quantity">x${item.quantity}</span>
+                        <button class="remove-item-btn" data-product-name="${item.name}">&times;</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItemLi);
+                total += item.price * item.quantity;
+            });
+        } else {
+            cartItemsContainer.innerHTML = '<li class="cart-empty-msg">Tu carrito está vacío</li>';
+        }
+        
         cartTotalSpan.textContent = `$${total.toLocaleString('es-CO')}`;
     }
 
-    // Función para añadir un producto al carrito
     function addToCart(e) {
-        // Mostrar el carrito
         openCart();
-
-        // Obtener datos del producto desde el botón
         const productData = e.target.dataset;
         const productName = productData.product;
         const productPrice = parseFloat(productData.price);
+        const productImage = productData.image;
 
-        // Buscar si el producto ya está en el carrito
         const existingItem = cart.find(item => item.name === productName);
-
         if (existingItem) {
-            // Si ya existe, aumentar la cantidad
             existingItem.quantity++;
         } else {
-            // Si no existe, añadirlo como nuevo
-            cart.push({
-                name: productName,
-                price: productPrice,
-                quantity: 1
-            });
+            cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
         }
-
-        // Volver a renderizar el carrito con los nuevos datos
+        
+        saveCartToLocalStorage(); // Guardamos el carrito cada vez que añadimos algo
         renderCart();
     }
-    
-    // Función para vaciar el carrito
-    function clearCart() {
-        cart = []; // Vacía el array
-        renderCart(); // Vuelve a renderizar para mostrarlo vacío
-    }
 
+    function handleCartActions(e) {
+        if (e.target.classList.contains('remove-item-btn')) {
+            const productName = e.target.dataset.productName;
+            cart = cart.filter(item => item.name !== productName);
+            
+            saveCartToLocalStorage(); // Guardamos el carrito cada vez que eliminamos algo
+            renderCart();
+        }
+    }
+    
     function openCart() {
         cartSidebar.classList.add('open');
     }
@@ -86,18 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- EVENT LISTENERS ---
-
-    // Añadir un listener a cada botón de "Añadir al Carrito"
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', addToCart);
-    });
-    
-    // Listener para el botón de vaciar carrito
-    clearCartButton.addEventListener('click', clearCart);
-
+    addToCartButtons.forEach(button => button.addEventListener('click', addToCart));
+    cartItemsContainer.addEventListener('click', handleCartActions);
     openCartButton.addEventListener('click', openCart);
     closeCartButton.addEventListener('click', closeCart);
     
-    // Renderizar el carrito al cargar la página (por si acaso guardamos datos en el futuro)
+    // Renderiza el carrito al cargar la página para mostrar los productos guardados
     renderCart();
 });
