@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 body {
-    font-family: 'Bebas Neue', sans-serif; 
+    font-family: "Varela Round", sans-serif;
     margin: 0; 
     background-color: #646464; 
     color: #333; 
     background-image: 
         linear-gradient(rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.7)), /* Overlay oscuro */
-        url('fondo2.jpg'); /* Tu imagen de fondo */
+        url('images/fondo2.jpg'); /* Tu imagen de fondo */
     
     background-size: cover; /* Cubre toda la pantalla */
     background-position: center; /* Centra la imagen */
@@ -23,7 +23,7 @@ header {
     
     /* --- AÑADE ESTAS PROPIEDADES --- */
     position: relative; /* Necesario para que el overlay funcione */
-    background-image: url('fondo.gif'); /* <-- ¡CAMBIA ESTO POR EL NOMBRE DE TU IMAGEN! */
+    background-image: url('images/fondo.gif'); /* <-- ¡CAMBIA ESTO POR EL NOMBRE DE TU IMAGEN! */
     background-size: cover; /* Hace que la imagen cubra todo el espacio */
     background-position: center; /* Centra la imagen */
 }
@@ -50,7 +50,7 @@ header::before {
     position: relative; 
     height: 85vh; 
     color: white; 
-    background-image: url('landonorriss.png');
+    background-image: url('images/landonorriss.png');
     background-size: cover; 
     background-position: center 30%; 
     
@@ -153,15 +153,21 @@ main h2 {
 }
 
 
+/* --- Estilo de Cada Tarjeta de Producto (CORREGIDO) --- */
 .producto {
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border: 1px solid #ddd;
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    width: 300px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
     padding: 20px;
     text-align: center;
-    transition: transform 0.2s; 
+    transition: transform 0.2s;
+    
+    /* --- LÍNEAS CLAVE AÑADIDAS --- */
+    display: flex; /* Activa Flexbox */
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio verticalmente */
 }
 
 .producto:hover {
@@ -453,6 +459,7 @@ footer .copyright {
     max-width: 1200px;
     margin: 0 auto; /* Centra el contenedor */
     padding: 20px;
+    align-items: flex-start;
 }
 
 .form-section {
@@ -467,7 +474,15 @@ footer .copyright {
     padding: 20px;
     border-radius: 8px;
     color: white;
+    display: flex;
+    flex-direction: column;
 }
+
+/* --- AÑADE ESTA NUEVA REGLA --- */
+#summary-items {
+    flex-grow: 1; /* Esta es la línea clave que empuja el total hacia abajo */
+}
+
 
 .form-section h2, .summary-section h2 {
     font-size: 1.8em;
@@ -690,4 +705,218 @@ footer .copyright {
         font-size: 2.2em; /* Reducimos el título principal */
     }
 
+}
+/* --- Estilos para Instrucciones de Pago --- */
+#payment-instructions {
+    background-color: #e9e9e9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 2px dashed #ccc;
+}
+
+#payment-instructions.hidden {
+    display: none; /* Oculta las instrucciones por defecto */
+}
+
+#payment-instructions h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+#payment-instructions ol {
+    padding-left: 20px;
+}
+
+#payment-instructions li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.payment-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.whatsapp-btn i {
+    font-size: 1.5em;
+}
+
+#nequi-qr {
+    width: 370px; /* <-- Aumentamos el tamaño */
+    height:370px; /* <-- Aumentamos el tamaño */
+    padding: 0px; /* Opcional: Un espacio entre el QR y el borde */
+    background-color: white; /* Asegura que el fondo del QR sea blanco */
+    
+    /* Borde 1: El borde interior morado */
+    border: 5px solid #8A2BE2; /* Un morado brillante */
+
+    /* Borde 2: El truco para el borde exterior negro */
+    box-shadow: 0 0 0 3px black;
+    
+    border-radius: 15px; /* Opcional: Redondea las esquinas */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+/* --- Estilos para Precios con Descuento --- */
+.precio-original {
+    font-size: 0.8em; /* Un poco más pequeño */
+    text-decoration: line-through; /* Tachado */
+    color: #686868; /* Un color gris para que no destaque tanto */
+    margin-right: 10px; /* Espacio entre los dos precios */
+}
+
+.precio-oferta {
+    font-weight: bold;
+    color: #2a9d8f; /* El color que ya usábamos para el precio */
+}
+/* --- Estilos para el Producto Destacado --- */
+
+.producto-destacado {
+    /* Lo hacemos un 5% más grande que el resto */
+    transform: scale(1.05); 
+    
+    /* Le damos un borde de un color llamativo para que resalte */
+    border: 3px solid #e76f51; 
+    
+    /* Hacemos la sombra un poco más pronunciada */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Un pequeño ajuste para que no se vea cortado al pasar el mouse por encima */
+.productos-grid {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/* --- Cinta de Oferta para el Producto Destacado --- */
+
+.producto-destacado {
+    /* ... (los estilos que ya pusimos arriba) ... */
+    
+    /* Añadimos estas dos propiedades para que la cinta se posicione correctamente */
+    position: relative; 
+    overflow: hidden; /* Oculta lo que se salga de la tarjeta */
+}
+
+.producto-destacado::before {
+    content: 'OFERTA';
+    position: absolute;
+    top: 25px;
+    right: -30px;
+    background-color: #8A2BE2; /* Morado */
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 5px 40px;
+    transform: rotate(45deg); /* La gira en diagonal */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+/* --- Estilos para la Barra de Búsqueda (VERSIÓN FINAL) --- */
+
+.search-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto 40px auto;
+    position: relative; /* Clave para posicionar el ícono */
+}
+
+/* El ícono de la lupa */
+.search-container .fa-search {
+    position: absolute;
+    left: 35px; /* Distancia desde la izquierda */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 1.1em;
+    z-index: 3; /* Asegura que esté visible */
+}
+
+/* El campo de texto */
+#search-input {
+    width: 100%;
+    padding: 15px 20px 15px 60px; /* Padding izquierdo aumentado para no chocar con la lupa */
+    font-size: 1.2em;
+    border-radius: 50px;
+    border: 2px solid #555;
+    background-color: #333;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box; /* Importante */
+}
+
+#search-input::placeholder {
+    color: #aaa;
+}
+/* --- Estilos para Botón "Inteligente" (cuando el producto ya está en el carrito) --- */
+
+/* Estilo para el botón de un producto que ya está en el carrito */
+.add-to-cart.in-cart {
+    background-color: #2a9d8f; /* Un verde para indicar "éxito" o "añadido" */
+    cursor: not-allowed; /* Cambia el cursor para indicar que no se puede volver a hacer clic */
+}
+
+/* Evita que el botón cambie de color al pasar el mouse por encima cuando ya está en el carrito */
+.add-to-cart.in-cart:hover {
+    background-color: #268a7e; 
+}
+/* --- Estilos para Lazy Loading con Animación --- */
+
+.lazy-load {
+    opacity: 0; /* Empieza totalmente transparente */
+    transition: opacity 0.5s ease-in-out; /* Una transición suave de 0.5 segundos */
+}
+
+.lazy-load.visible {
+    opacity: 1; /* Se vuelve totalmente visible cuando carga */
+}
+/* --- Estilos para el Botón "Volver Arriba" --- */
+
+#back-to-top-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: #333; /* Un gris oscuro, diferente al del carrito */
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 998; /* Un poco por debajo del botón del carrito */
+
+    /* Lo hacemos invisible por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Ligero efecto de subida */
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+/* Estilo para cuando el botón se hace visible */
+#back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top-btn:hover {
+    background-color: #555;
 }

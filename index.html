@@ -40,327 +40,487 @@
             <a href="#proteinas" class="cta-button">Explora el Catálogo</a>
         </div>
     </section>
-    <section id="proteinas" class="categoria-productos">
+
+    <div class="search-container">
+        <form id="search-form" role="search">
+            <i class="fas fa-search"></i>
+            <input type="search" id="search-input" placeholder="Buscar por nombre..." aria-label="Buscar productos">
+        </form>
+    </div>
+
+    <div id="no-results-message" style="display: none; text-align: center; color: white; padding: 40px; font-family: 'Roboto', sans-serif;">
+        <h2>No se encontraron productos</h2>
+        <p>Intenta con otro término de búsqueda.</p>
+    </div>
+
+    <section id="paquetes" class="categoria-productos">
+    <h2>Paquetes y Ofertas Especiales</h2>
+    <div class="productos-grid">
+        <div class="producto producto-destacado">
+    <img src="images/paquete-inicio.jpg" alt="Paquete de Inicio: Proteína + Creatina">
+    <h3>Paquete de Inicio</h3>
+    <p class="descripcion">
+        ¡Todo lo que necesitas para empezar! Incluye: <br>
+        - 1 Whey Gold Standard 2LB <br>
+        - 1 Creatina Micronizada 300GR
+    </p>
+    <p class="precio">
+        <span class="precio-original">$434.000</span>
+        <span class="precio-oferta">$380.000</span>
+    </p>
+    <button class="add-to-cart" 
+            data-product="Paquete de Inicio" 
+            data-price="380000" 
+            data-original-price="434000"
+            data-image="images/paquete-inicio.jpg">Añadir al Carrito</button>
+</div>
+<div class="producto producto-destacado">
+    <img data-src="images/paquete-fuerza.jpg" class="lazy-load" alt="Paquete de Fuerza Total: Creatina + Pre-Entreno">
+    <h3>Paquete de Fuerza Total</h3>
+    <p class="descripcion">
+        La combinación perfecta para entrenamientos explosivos. Incluye:<br>
+        - 1 Creatina Micronizada 300GR<br>
+        - 1 C4 Original 60 Serv
+    </p>
+    <p class="precio">
+        <span class="precio-original">$248.000</span>
+        <span class="precio-oferta">$220.000</span>
+    </p>
+    <button class="add-to-cart" 
+            data-product="Paquete de Fuerza Total" 
+            data-price="220000" 
+            data-original-price="248000"
+            data-image="images/paquete-fuerza.jpg">Añadir al Carrito</button>
+</div>
+<div class="producto producto-destacado">
+    <img data-src="images/paquete-definicion.jpg" class="lazy-load" alt="Paquete de Máxima Definición: Proteína Isolada + Pre-Entreno C4">
+    <h3>Paquete de Máxima Definición</h3>
+    <p class="descripcion">
+        Energía para entrenar y la proteína más pura para definir. Incluye:<br>
+        - 1 Isolated Gold Standard 5LB<br>
+        - 1 C4 Original 60 Serv
+    </p>
+    <p class="precio">
+        <span class="precio-original">$536.000</span>
+        <span class="precio-oferta">$495.000</span>
+    </p>
+    <button class="add-to-cart" 
+            data-product="Paquete de Máxima Definición" 
+            data-price="495000" 
+            data-original-price="536000"
+            data-image="images/paquete-definicion.jpg">Añadir al Carrito</button>
+</div>
+<div class="producto producto-destacado">
+    <img data-src="images/paquete-recuperacion.jpg" class="lazy-load" alt="Paquete de Recuperación Nocturna: Caseína + Whey">
+    <h3>Paquete de Recuperación Nocturna</h3>
+    <p class="descripcion">
+        Nutrición muscular para el día y la noche. Incluye:<br>
+        - 1 Casein Gold Standard 4lb (lenta absorción)<br>
+        - 1 Whey Gold Standard 2LB (rápida absorción)
+    </p>
+    <p class="precio">
+        <span class="precio-original">$561.000</span>
+        <span class="precio-oferta">$510.000</span>
+    </p>
+    <button class="add-to-cart" 
+            data-product="Paquete de Recuperación Nocturna" 
+            data-price="510000" 
+            data-original-price="561000"
+            data-image="images/paquete-recuperacion.jpg">Añadir al Carrito</button>
+</div>
+<div class="producto producto-destacado">
+    <img data-src="images/paquete-vegano.jpg" class="lazy-load" alt="Paquete Vegano Esencial: Proteína Vegana + C4 Pre-Entreno">
+    <h3>Paquete Vegano Esencial</h3>
+    <p class="descripcion">
+        Rendimiento superior con la fuerza de las plantas. Incluye:<br>
+        - 1 Gold Standard 100% Plant Protein<br>
+        - 1 C4 Sports 30 Serv
+    </p>
+    <p class="precio">
+        <span class="precio-original">$193.000</span>
+        <span class="precio-oferta">$175.000</span>
+    </p>
+    <button class="add-to-cart" 
+            data-product="Paquete Vegano Esencial" 
+            data-price="175000" 
+            data-original-price="193000"
+            data-image="images/paquete-vegano.jpg">Añadir al Carrito</button>
+</div>
+<div class="producto producto-destacado">
+    <img data-src="images/paquete-volumen.jpg" class="lazy-load" alt="Paquete de Volumen Extremo: Serious Mass + Cell Tech">
+    <h3>Paquete de Volumen Extremo</h3>
+    <p class="descripcion">
+        La combinación definitiva para ganancias de masa. Incluye:<br>
+        - 1 Serious Mass 12LB<br>
+        - 1 Cell Tech Creatina 6lb
+    </p>
+    <p class="precio">
+        <span class="precio-original">$586.000</span>
+        <span class="precio-oferta">$540.000</span>
+    </p>
+    <button class="add-to-cart" 
+            data-product="Paquete de Volumen Extremo" 
+            data-price="540000" 
+            data-original-price="586000"
+            data-image="images/paquete-volumen.jpg">Añadir al Carrito</button>
+</div>
+
+        </div>
+</section>
+
+
+<section id="proteinas" class="categoria-productos">
         <h2>Proteínas</h2>
         <div class="productos-grid">
             <div class="producto">
-                <img src="wheygold5lb.jpg" alt="Proteína Whey Gold Standard 5LB">
+                <img data-src="images/wheygold5lb.jpg" class="lazy-load" alt="Proteína Whey Gold Standard 5LB">
                 <h3>Whey Gold Standard 5LB</h3>
                 <p class="descripcion">El tamaño más popular y el balance perfecto entre cantidad y calidad. Con 5 libras, tienes el combustible ideal para tus entrenamientos diarios, apoyando la recuperación y la construcción de masa muscular magra. ¡El estándar de oro por una razón!</p>
-                <p class="precio">$357.000</p>
-                <button class="add-to-cart" data-product="Whey Gold Standard 5LB" data-price="357000" data-image="wheygold5lb.jpg">Añadir al Carrito</button>
+                <p class="precio">
+                        <span class="precio-original">$357.000</span>
+                        <span class="precio-oferta">$325.000</span>
+                </p>
+                <button class="add-to-cart" 
+                        data-product="Whey Gold Standard 5LB" 
+                        data-price="325000"  data-original-price="357000" data-image="images/wheygold5lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="wheygold2lb.jpg" alt="Proteína Whey Gold Standard 2LB">
+                <img data-src="images/wheygold2lb.jpg" class="lazy-load" alt="Proteína Whey Gold Standard 2LB">
                 <h3>Whey Gold Standard 2LB</h3>
                 <p class="descripcion">Ideal para empezar tu camino fitness o para probar nuevos sabores sin comprometerte a un gran formato. Sus 2 libras te ofrecen la misma calidad Gold Standard  en un envase práctico, garantizando una recuperación superior donde sea que estés.</p>
                 <p class="precio">$204.000</p>
-                <button class="add-to-cart" data-product="Whey Gold Standard 2LB" data-price="204000" data-image="wheygold2lb.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Whey Gold Standard 2LB" data-price="204000" data-image="images/wheygold2lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="wheygold10lb.jpg" alt="Proteína Whey Gold Standard 10LB">
+                <img data-src="images/wheygold10lb.jpg" class="lazy-load" alt="Proteína Whey Gold Standard 10LB">
                 <h3>Whey Gold Standard 10LB</h3>
                 <p class="descripcion">El formato definitivo para atletas comprometidos. Con 10 libras de la proteína de suero más confiable del mundo, aseguras tu suplementación por meses. Ideal para un crecimiento muscular sostenido y una recuperación óptima sin interrupciones.</p>
                 <p class="precio">$665.000</p>
-                <button class="add-to-cart" data-product="Whey Gold Standard 10LB" data-price="665000" data-image="wheygold10lb.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Whey Gold Standard 10LB" data-price="665000" data-image="images/wheygold10lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="wheygold1.5lb.jpg" alt="Proteína Whey Gold Standard 1.5LB">
+                <img data-src="images/wheygold1.5lb.jpg" class="lazy-load" alt="Proteína Whey Gold Standard 1.5LB">
                 <h3>Whey Gold Standard 1.5LB</h3>
                 <p class="descripcion">Tu compañera de viaje o el tamaño perfecto para no faltar a tu dosis de proteína post-entreno. Este formato de 1.5 libras es ultra portátil y conveniente, asegurando que siempre tengas a la mano la pureza y eficacia de Gold Standard.</p>
                 <p class="precio">$169.000</p>
-                <button class="add-to-cart" data-product="Whey Gold Standard 1.5LB" data-price="169000" data-image="wheygold1.5lb.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Whey Gold Standard 1.5LB" data-price="169000" data-image="images/wheygold1.5lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="gold5lb.jpg" alt="Proteína Isolated Gold Standard 5lb">
+                <img data-src="images/gold5lb.jpg" class="lazy-load" alt="Proteína Isolated Gold Standard 5lb">
                 <h3>Isolated Gold Standard 5LB</h3>
                 <p class="descripcion">La máxima pureza para resultados superiores. Este formato de 5 libras es ideal para atletas en etapa de definición que buscan minimizar carbohidratos y grasas. Su rápida absorción nutre tus músculos de inmediato para una recuperación limpia.</p>
                 <p class="precio">$397.000</p>
-                <button class="add-to-cart" data-product="Isolated Gold Standard 5LB" data-price="397000" data-image="gold5lb.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Isolated Gold Standard 5LB" data-price="397000" data-image="images/gold5lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="gold4lb.jpg" alt="Proteína Isolated Gold Standard 4lb">
-                <h3>Isolated Gold Standard 4lb</h3>
-                <p class="descripcion">La proteína de suero más avanzada y de más rápida absorción en el mercado. Al estar hidrolizada, llega a tus músculos de forma casi instantánea, ideal para una recuperación post-entreno de nivel profesional. Cero lactosa y cero colesterol para la máxima pureza.</p>
-                <p class="precio">$346.000</p>
-                <button class="add-to-cart" data-product="Isolated Gold Standard 4LB" data-price="346000" data-image="gold4lb.jpg">Añadir al Carrito</button>
-            </div>
+    <img data-src="images/gold4lb.jpg" class="lazy-load" alt="Proteína Isolated Gold Standard 4lb">
+    <h3>Isolated Gold Standard 4lb</h3>
+    <p class="descripcion">La proteína de suero más avanzada y de más rápida absorción en el mercado. Al estar hidrolizada, llega a tus músculos de forma casi instantánea, ideal para una recuperación post-entreno de nivel profesional. Cero lactosa y cero colesterol para la máxima pureza.</p>
+    <p class="precio">$346.000</p>
+    <button class="add-to-cart" 
+            data-product="Isolated Gold Standard 4lb" 
+            data-price="346000" 
+            data-image="images/gold4lb.jpg">Añadir al Carrito</button>
+</div>
             <div class="producto">
-                <img src="gold3lb.jpg" alt="Proteína Isolated Gold 3lb">
-                <h3>Isolated Gold 3lb</h3>
-                <p class="descripcion">Descubre el poder de la proteína aislada con este práctico formato de 3 libras. Disfruta de la misma increíble pureza y rápida absorción para una definición muscular notable, en un tamaño más accesible. Calidad Gold Standard garantizada.</p>
-                <p class="precio">$301.000</p>
-                <button class="add-to-cart" data-product="Isolated Gold Standard 3LB" data-price="301000" data-image="gold3lb.jpg">Añadir al Carrito</button>
-            </div>
+    <img data-src="images/gold3lb.jpg" class="lazy-load" alt="Proteína Isolated Gold 3lb">
+    <h3>Isolated Gold 3lb</h3>
+    <p class="descripcion">Descubre el poder de la proteína aislada con este práctico formato de 3 libras. Disfruta de la misma increíble pureza y rápida absorción para una definición muscular notable, en un tamaño más accesible. Calidad Gold Standard garantizada.</p>
+    <p class="precio">$301.000</p>
+    <button class="add-to-cart" 
+            data-product="Isolated Gold 3lb" 
+            data-price="301000" 
+            data-image="images/gold3lb.jpg">Añadir al Carrito</button>
+</div>
             <div class="producto">
-                <img src="smas12lb.jpg" alt="Serious Mass 12LB">
-                <h3>SERIOUS MASS 12LB</h3>
-                <p class="descripcion">La fórmula definitiva para ganar peso y masa muscular. Especialmente diseñado para quienes tienen dificultades para aumentar de tamaño, cada porción aporta un golpe masivo de calorías y nutrientes esenciales para impulsar el crecimiento y la fuerza de manera seria.</p>
-                <p class="precio">$346.000</p>
-                <button class="add-to-cart" data-product="Serious Mass 12LB" data-price="346000" data-image="smas12lb.jpg">Añadir al Carrito</button>
-            </div>
+    <img data-src="images/smas12lb.jpg" class="lazy-load" alt="Serious Mass 12LB">
+    <h3>SERIOUS MASS 12LB</h3>
+    <p class="descripcion">La fórmula definitiva para ganar peso y masa muscular. Especialmente diseñado para quienes tienen dificultades para aumentar de tamaño, cada porción aporta un golpe masivo de calorías y nutrientes esenciales para impulsar el crecimiento y la fuerza de manera seria.</p>
+    <p class="precio">$346.000</p>
+    <button class="add-to-cart" 
+            data-product="SERIOUS MASS 12LB" 
+            data-price="346000" 
+            data-image="images/smas12lb.jpg">Añadir al Carrito</button>
+</div>
             <div class="producto">
-                <img src="smas6lb.jpeg" alt="Serious Mass 6lb">
-                <h3>Serious Mass 6lb</h3>
-                <p class="descripcion">Inicia tu fase de volumen con el ganador de peso más confiable. Este formato de 6 libras te da el impulso calórico perfecto para empezar a ver resultados en tamaño y fuerza, sin el compromiso del tamaño completo. Ideal para probar su eficacia.</p>
-                <p class="precio">$195.000</p>
-                <button class="add-to-cart" data-product="Serious Mass 6LB" data-price="195000" data-image="smas6lb.jpeg">Añadir al Carrito</button>
-            </div>
+    <img data-src="images/smas6lb.jpeg" class="lazy-load" alt="Serious Mass 6lb">
+    <h3>Serious Mass 6lb</h3>
+    <p class="descripcion">Inicia tu fase de volumen con el ganador de peso más confiable. Este formato de 6 libras te da el impulso calórico perfecto para empezar a ver resultados en tamaño y fuerza, sin el compromiso del tamaño completo. Ideal para probar su eficacia.</p>
+    <p class="precio">$195.000</p>
+    <button class="add-to-cart" 
+            data-product="Serious Mass 6lb" 
+            data-price="195000" 
+            data-image="images/smas6lb.jpeg">Añadir al Carrito</button>
+</div>
             <div class="producto">
-                <img src="casein.jpg" alt="Casein Gold Standard 4lb">
+                <img data-src="images/casein.jpg" class="lazy-load" alt="Casein Gold Standard 4lb">
                 <h3>Casein Gold Standard 4lb</h3>
                 <p class="descripcion">La proteína de digestión lenta ideal para la recuperación nocturna. Su liberación gradual de aminoácidos alimenta tus músculos durante horas, previniendo el desgaste muscular mientras duermes. Perfecta para tomar antes de acostarse o entre comidas.</p>
                 <p class="precio">$357.000</p>
-                <button class="add-to-cart" data-product="Casein Gold Standard 4lb" data-price="357000" data-image="casein.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Casein Gold Standard 4lb" data-price="357000" data-image="images/casein.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="PlatinumHydrowheyOptimumNutritionVanilla4lb.jpg" alt="Platinum Hydro Whey 4lb">
+                <img data-src="images/PlatinumHydrowheyOptimumNutritionVanilla4lb.jpg" class="lazy-load" alt="Platinum Hydro Whey 4lb">
                 <h3>Platinum Hydro Whey 4lb</h3>
                 <p class="descripcion">La proteína de suero más avanzada y de más rápida absorción. Al estar hidrolizada, sus péptidos llegan a tus músculos de forma casi instantánea, ideal para una recuperación post-entreno de nivel profesional y para personas con estómagos sensibles.</p>
                 <p class="precio">$428.000</p>
-                <button class="add-to-cart" data-product="Platinum Hydro Whey 4lb" data-price="428000" data-image="PlatinumHydrowheyOptimumNutritionVanilla4lb.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Platinum Hydro Whey 4lb" data-price="428000" data-image="images/PlatinumHydrowheyOptimumNutritionVanilla4lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="gold-standard-plant-vanilla-12-serv.jpg" alt="Gold Standard 100% Plant Protein">
+                <img data-src="images/gold-standard-plant-vanilla-12-serv.jpg" class="lazy-load" alt="Gold Standard 100% Plant Protein">
                 <h3>Gold Standard 100% Plant Protein</h3>
                 <p class="descripcion">La calidad Gold Standard, ahora en una fórmula 100% vegetal. Elaborada a partir de una mezcla de proteínas de arveja y arroz integral, esta es la opción perfecta para atletas veganos o con sensibilidad a los lácteos que no sacrifican el rendimiento.</p>
                 <p class="precio">$98.000</p>
-                <button class="add-to-cart" data-product="Gold Standard 100% Plant Protein" data-price="98000" data-image="gold-standard-plant-vanilla-12-serv.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Gold Standard 100% Plant Protein" data-price="98000" data-image="images/gold-standard-plant-vanilla-12-serv.jpg">Añadir al Carrito</button>
             </div>
         </div>
     </section>
-  
-
-
 
     <section id="creatinas" class="categoria-productos">
         <h2>Creatinas</h2>
         <div class="productos-grid">
             <div class="producto">
-                <img src="cremicro600gr.jpg" alt="Creatina Micronizada 600GR">
-                <h3>CREATINA MICRONIZADA 600GR</h3>
-                <p class="descripcion">Maximiza tu rendimiento a largo plazo. Con 600 gramos de creatina pura y micronizada, aseguras tu suplementación para ciclos completos de fuerza y volumen.</p>
-                <p class="precio">$170.000</p>
-                <button class="add-to-cart" data-product="Creatina 600GR" data-price="170000" data-image="cremicro600gr.jpg">Añadir al Carrito</button>
-            </div>
+    <img data-src="images/cremicro600gr.jpg" class="lazy-load" alt="Creatina Micronizada 600GR">
+    <h3>CREATINA MICRONIZADA 600GR</h3>
+    <p class="descripcion">Maximiza tu rendimiento a largo plazo. Con 600 gramos de creatina pura y micronizada, aseguras tu suplementación para ciclos completos de fuerza y volumen.</p>
+    <p class="precio">$170.000</p>
+    <button class="add-to-cart" 
+            data-product="CREATINA MICRONIZADA 600GR" 
+            data-price="170000" 
+            data-image="images/cremicro600gr.jpg">Añadir al Carrito</button>
+</div>
             <div class="producto">
-                <img src="cremicro300gr.jpg" alt="Creatina Micronizada 300GR">
-                <h3>CREATINA MICRONIZADA 300GR</h3>
-                <p class="descripcion">El suplemento esencial para potenciar tu fuerza y mejorar la recuperación entre series. Calidad micronizada para una máxima absorción y eficacia.</p>
-                <p class="precio">$109.000</p>
-                <button class="add-to-cart" data-product="Creatina 300GR" data-price="109000" data-image="cremicro300gr.jpg">Añadir al Carrito</button>
-            </div>
+    <img data-src="images/cremicro300gr.jpg" class="lazy-load" alt="Creatina Micronizada 300GR">
+    <h3>CREATINA MICRONIZADA 300GR</h3>
+    <p class="descripcion">El suplemento esencial para potenciar tu fuerza y mejorar la recuperación entre series. Calidad micronizada para una máxima absorción y eficacia.</p>
+    <p class="precio">$109.000</p>
+    <button class="add-to-cart" 
+            data-product="CREATINA MICRONIZADA 300GR" 
+            data-price="109000" 
+            data-image="images/cremicro300gr.jpg">Añadir al Carrito</button>
+</div>
             <div class="producto">
-                <img src="dymacrea500gr.jpg" alt="Dymatize Creatine 500gr">
+                <img data-src="images/dymacrea500gr.jpg" class="lazy-load" alt="Dymatize Creatine 500gr">
                 <h3>Dymatize Creatine 500gr</h3>
                 <p class="descripcion">Potencia tus entrenamientos con la creatina ultra-pura de Dymatize. Su fórmula micronizada asegura una rápida disolución y absorción para ganancias notables.</p>
                 <p class="precio">$170.000</p>
-                <button class="add-to-cart" data-product="Dymatize Creatine 500gr" data-price="170000" data-image="dymacrea500gr.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Dymatize Creatine 500gr" data-price="170000" data-image="images/dymacrea500gr.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="dymacrea300g.jpeg" alt="Dymatize Creatine 300gr">
+                <img data-src="images/dymacrea300g.jpeg" class="lazy-load" alt="Dymatize Creatine 300gr">
                 <h3>Dymatize Creatine 300gr</h3>
                 <p class="descripcion">El tamaño ideal para un ciclo completo de fuerza. Con 300g de creatina Dymatize, obtienes el impulso necesario para superar tus límites y acelerar tus ganancias.</p>
                 <p class="precio">$130.000</p>
-                <button class="add-to-cart" data-product="Dymatize Creatine 300gr" data-price="130000" data-image="dymacrea300g.jpeg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Dymatize Creatine 300gr" data-price="130000" data-image="images/dymacrea300g.jpeg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="calltech6lb.jpg" alt="Cell Tech Creatina 6lb">
+                <img data-src="images/calltech6lb.jpg" class="lazy-load" alt="Cell Tech Creatina 6lb">
                 <h3>Cell Tech Creatina 6lb</h3>
                 <p class="descripcion">Más que solo creatina. Su fórmula avanzada con carbohidratos maximiza la absorción y la voluminización celular para ganancias rápidas en tamaño y fuerza.</p>
-                <p class="precio">$240.000</p>
-                <button class="add-to-cart" data-product="Cell Tech Creatina 6lb" data-price="240000" data-image="calltech6lb.jpg">Añadir al Carrito</button>
+                <p class="precio">
+                    <span class="precio-original">$240.000</span>
+                    <span class="precio-oferta">$215.000</span>
+                </p>
+                <button class="add-to-cart" data-product="Cell Tech Creatina 6lb" data-price="215000" data-original-price="240000" data-image="images/calltech6lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="celltech3lb.jpg" alt="Cell Tech Creatina 3lb">
+                <img data-src="images/celltech3lb.jpg" class="lazy-load" alt="Cell Tech Creatina 3lb">
                 <h3>Cell Tech Creatina 3lb</h3>
                 <p class="descripcion">Experimenta el poder anabólico de Cell Tech en un formato más compacto. La misma fórmula potente para llevar tus entrenamientos a un nuevo nivel.</p>
                 <p class="precio">$160.000</p>
-                <button class="add-to-cart" data-product="Cell Tech Creatina 3lb" data-price="160000" data-image="celltech3lb.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Cell Tech Creatina 3lb" data-price="160000" data-image="images/celltech3lb.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="creatinaplatinum.jpg" alt="Creatina Platinum 80 Serv">
+                <img data-src="images/creatinaplatinum.jpg" class="lazy-load" alt="Creatina Platinum 80 Serv">
                 <h3>Creatina Platinum 80 Serv</h3>
                 <p class="descripcion">Pureza y calidad premium. Platinum Creatine te entrega monohidrato de creatina micronizada de la más alta calidad, sin aditivos. El pilar para construir músculo.</p>
-                <p class="precio">$144.000</p>
-                <button class="add-to-cart" data-product="Creatina Platinum 80 Serv" data-price="144000" data-image="creatinaplatinum.jpg">Añadir al Carrito</button>
+                <p class="precio">
+                    <span class="precio-original">$144.000</span>
+                    <span class="precio-oferta">$129.000</span>
+                </p>
+                <button class="add-to-cart" data-product="Creatina Platinum 80 Serv" data-price="129000" data-original-price="144000" data-image="images/creatinaplatinum.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="creapower10lb.png" alt="Creatina Power 10lb">
+                <img data-src="images/creapower10lb.png" class="lazy-load" alt="Creatina Power 10lb">
                 <h3>Creatina Power 10lb</h3>
                 <p class="descripcion">Una fórmula todo en uno para poder y volumen. Combina creatina con nutrientes clave para potenciar la fuerza explosiva y apoyar el aumento de masa muscular.</p>
                 <p class="precio">$219.990</p>
-                <button class="add-to-cart" data-product="Creatina Power 10lb" data-price="219990" data-image="creapower10lb.png">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Creatina Power 10lb" data-price="219990" data-image="images/creapower10lb.png">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="creapower2lb.png" alt="Creatina Power 2lb">
+                <img data-src="images/creapower2lb.png" class="lazy-load" alt="Creatina Power 2lb">
                 <h3>Creatina Power 2lb</h3>
                 <p class="descripcion">El punto de partida perfecto para experimentar ganancias de fuerza y poder. La misma fórmula potente en un tamaño conveniente para iniciar tu transformación.</p>
                 <p class="precio">$54.990</p>
-                <button class="add-to-cart" data-product="Creatina Power 2lb" data-price="54990" data-image="creapower2lb.png">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Creatina Power 2lb" data-price="54990" data-image="images/creapower2lb.png">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="creastack.jpg" alt="Crea Stack">
+                <img data-src="images/creastack.jpg" class="lazy-load" alt="Crea Stack">
                 <h3>Crea Stack</h3>
                 <p class="descripcion">No es solo una creatina, es un stack completo. Diseñado con múltiples fuentes y cofactores para una absorción y efectividad superiores en la construcción de fuerza.</p>
                 <p class="precio">$149.990</p>
-                <button class="add-to-cart" data-product="Crea Stack" data-price="149990" data-image="creastack.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Crea Stack" data-price="149990" data-image="images/creastack.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="monohidrate1.jpg" alt="Creatina Monohydrate 1000gr">
+                <img data-src="images/monohidrate1.jpg" class="lazy-load" alt="Creatina Monohydrate 1000gr">
                 <h3>Creatina Monohydrate 1000gr</h3>
                 <p class="descripcion">1kg de pura confianza. La creatina de Universal Nutrition es un pilar en el culturismo, reconocida por su calidad y eficacia probada. El formato ideal para el atleta que no se detiene.</p>
                 <p class="precio">$220.000</p>
-                <button class="add-to-cart" data-product="Creatina Monohydrate 1000gr" data-price="220000" data-image="monohidrate1.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Creatina Monohydrate 1000gr" data-price="220000" data-image="images/monohidrate1.jpg">Añadir al Carrito</button>
             </div>
             <div class="producto">
-                <img src="monohidrate3.jpg" alt="Creatina Monohydrate 300gr">
+                <img data-src="images/monohidrate3.jpg" class="lazy-load" alt="Creatina Monohydrate 300gr">
                 <h3>Creatina Monohydrate 300gr</h3>
                 <p class="descripcion">Calidad y eficacia probadas en el tamaño perfecto. La legendaria creatina de Universal en un práctico formato de 300g para potenciar tus entrenamientos.</p>
                 <p class="precio">$115.000</p>
-                <button class="add-to-cart" data-product="Creatina Monohydrate 300gr" data-price="115000" data-image="monohidrate3.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Creatina Monohydrate 300gr" data-price="115000" data-image="images/monohidrate3.jpg">Añadir al Carrito</button>
             </div>
         </div>
     </section>
-
-
-
-
-
 
     <section id="pre-entrenos" class="categoria-productos">
         <h2>Pre-Entrenos</h2>
         <div class="productos-grid">
             <div class="producto">
-                <img src="noxplode60.jpg" alt="N.O-XPLODE 60 Serv">
+                <img data-src="images/noxplode60.jpg" class="lazy-load" alt="N.O-XPLODE 60 Serv">
                 <h3>N.O-XPLODE 60 Serv</h3>
                 <p class="descripcion">La fórmula legendaria que lo empezó todo. Prepárate para una energía explosiva, enfoque mental intenso y una vascularización increíble para dominar cada entrenamiento.</p>
-                <p class="precio">$225.000</p>
-                <button class="add-to-cart" data-product="N.O-XPLODE 60 Serv" data-price="225000" data-image="noxplode60.jpg">Añadir al Carrito</button>
+                <p class="precio">
+                    <span class="precio-original">$225.000</span>
+                    <span class="precio-oferta">$199.000</span>
+                </p>
+                <button class="add-to-cart" data-product="N.O-XPLODE 60 Serv" data-price="199000" data-original-price="225000" data-image="images/noxplode60.jpg">Añadir al Carrito</button>
             </div>
             
             <div class="producto">
-                <img src="noxplode30.jpg" alt="N.O-XPLODE 30 Serv">
+                <img data-src="images/noxplode30.jpg" class="lazy-load" alt="N.O-XPLODE 30 Serv">
                 <h3>N.O-XPLODE 30 Serv</h3>
                 <p class="descripcion">Siente el poder del legendario N.O-Xplode en un formato de 30 servicios. La misma energía, enfoque y bombeo para asegurar que cada sesión de entrenamiento cuente.</p>
                 <p class="precio">$135.000</p>
-                <button class="add-to-cart" data-product="N.O-XPLODE 30 Serv" data-price="135000" data-image="noxplode30.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="N.O-XPLODE 30 Serv" data-price="135000" data-image="images/noxplode30.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="c460.jpg" alt="C4 Original 60 Serv">
+                <img data-src="images/c460.jpg" class="lazy-load" alt="C4 Original 60 Serv">
                 <h3>C4 Original 60 servs</h3>
                 <p class="descripcion">El pre-entreno #1 en ventas a nivel mundial. C4 Original te da la energía explosiva y el enfoque necesarios para encender tus entrenamientos más duros.</p>
-                <p class="precio">$139.000</p>
-                <button class="add-to-cart" data-product="C4 Original 60 servs" data-price="139000" data-image="c460.jpg">Añadir al Carrito</button>
+                <p class="precio">
+                    <span class="precio-original">$139.000</span>
+                    <span class="precio-oferta">$119.000</span>
+                </p>
+                <button class="add-to-cart" data-product="C4 Original 60 servs" data-price="119000" data-original-price="139000" data-image="images/c460.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="c430.jpg" alt="C4 Sports 30 Serv">
+                <img data-src="images/c430.jpg" class="lazy-load" alt="C4 Sports 30 Serv">
                 <h3>C4 Sports 30 Serv</h3>
                 <p class="descripcion">Diseñado para el atleta de día a día. C4 Sport ofrece un impulso de energía y rendimiento con la confianza de la certificación NSF for Sport. ¡Tu inicio perfecto!</p>
                 <p class="precio">$95.000</p>
-                <button class="add-to-cart" data-product="C4 Sports 30 Serv" data-price="95000" data-image="c430.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="C4 Sports 30 Serv" data-price="95000" data-image="images/c430.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="energyx25.jpg" alt="Energy X 25 Serv">
+                <img data-src="images/energyx25.jpg" class="lazy-load" alt="Energy X 25 Serv">
                 <h3>Energy X 25 Serv</h3>
                 <p class="descripcion">Activa tu cuerpo y tu mente antes de entrenar. Energy X te proporciona la chispa de energía que necesitas para mantener la intensidad de principio a fin.</p>
                 <p class="precio">$29.990</p>
-                <button class="add-to-cart" data-product="Energy X 25 Serv" data-price="29990" data-image="energyx25.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Energy X 25 Serv" data-price="29990" data-image="images/energyx25.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="myth.jpg" alt="Pre-Entreno Myth 1 Serv">
+                <img data-src="images/myth.jpg" class="lazy-load" alt="Pre-Entreno Myth 1 Serv">
                 <h3>Pre-Entreno Myth 1 Serv</h3>
                 <p class="descripcion">¿Quieres probar un poder mítico? Este sobre individual es perfecto para experimentar una sesión de entrenamiento legendaria sin compromisos. ¡Pruébalo!</p>
                 <p class="precio">$7.900</p>
-                <button class="add-to-cart" data-product="Pre-Entreno Myth 1 Serv" data-price="7900" data-image="myth.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Pre-Entreno Myth 1 Serv" data-price="7900" data-image="images/myth.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="nitroshock.jpg" alt="Nitro Shock 22 Serv">
+                <img data-src="images/nitroshock.jpg" class="lazy-load" alt="Nitro Shock 22 Serv">
                 <h3>Nitro Shock 22 Serv</h3>
                 <p class="descripcion">Prepárate para un bombeo electrizante y una energía impactante. Nitro Shock está formulado para maximizar el flujo sanguíneo y la vascularización.</p>
                 <p class="precio">$94.990</p>
-                <button class="add-to-cart" data-product="Nitro Shock 22 Serv" data-price="94990" data-image="nitroshock.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Nitro Shock 22 Serv" data-price="94990" data-image="images/nitroshock.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="army30.jpg" alt="Army 30 Serv">
+                <img data-src="images/army30.jpg" class="lazy-load" alt="Army 30 Serv">
                 <h3>Army 30 Serv</h3>
                 <p class="descripcion">Entrena como un soldado de élite. Army es un pre-entreno de alta estimulación diseñado para misiones de entrenamiento intensas, mejorando resistencia y enfoque.</p>
-                <p class="precio">$115.000</p>
-                <button class="add-to-cart" data-product="Army 30 Serv" data-price="115000" data-image="army30.jpg">Añadir al Carrito</button>
+                <p class="precio">
+                    <span class="precio-original">$115.000</span>
+                    <span class="precio-oferta">$99.000</span>
+                </p>
+                <button class="add-to-cart" data-product="Army 30 Serv" data-price="99000" data-original-price="115000" data-image="images/army30.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="intenze14.jpg" alt="Intenze 14 Serv">
+                <img data-src="images/intenze14.jpg" class="lazy-load" alt="Intenze 14 Serv">
                 <h3>Intenze 14 Serv</h3>
                 <p class="descripcion">Intensidad pura en cada servicio. Intenze está diseñado para darte un golpe de energía rápido y efectivo, perfecto para esas sesiones donde necesitas dar el 110%.</p>
                 <p class="precio">$75.000</p>
-                <button class="add-to-cart" data-product="Intenze 14 Serv" data-price="75000" data-image="intenze14.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Intenze 14 Serv" data-price="75000" data-image="images/intenze14.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="intenze30.jpg" alt="Intenze 30 Serv">
+                <img data-src="images/intenze30.jpg" class="lazy-load" alt="Intenze 30 Serv">
                 <h3>Intenze 30 Serv</h3>
                 <p class="descripcion">Lleva tus entrenamientos a un nuevo nivel de forma consistente. Con 30 servicios, Intenze se convierte en tu aliado diario para sesiones explosivas.</p>
-                <p class="precio">$145.000</p>
-                <button class="add-to-cart" data-product="Intenze 30 Serv" data-price="145000" data-image="intenze30.jpg">Añadir al Carrito</button>
+                <p class="precio">
+                    <span class="precio-original">$145.000</span>
+                    <span class="precio-oferta">$129.000</span>
+                </p>
+                <button class="add-to-cart" data-product="Intenze 30 Serv" data-price="129000" data-original-price="145000" data-image="images/intenze30.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="intenzesachet.jpg" alt="Intenze Sachet">
+                <img data-src="images/intenzesachet.jpg" class="lazy-load" alt="Intenze Sachet">
                 <h3>Intenze Sachet</h3>
                 <p class="descripcion">Prueba la intensidad, llévala contigo. La dosis perfecta para un entrenamiento explosivo cuando más lo necesitas. Ideal para el gimnasio o para probar su poder.</p>
                 <p class="precio">$6.300</p>
-                <button class="add-to-cart" data-product="Intenze Sachet" data-price="6300" data-image="intenzesachet.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Intenze Sachet" data-price="6300" data-image="images/intenzesachet.jpg">Añadir al Carrito</button>
             </div>
 
             <div class="producto">
-                <img src="legacy50.jpg" alt="Legacy 50 Serv">
+                <img data-src="images/legacy50.jpg" class="lazy-load" alt="Legacy 50 Serv">
                 <h3>Legacy 50 Serv</h3>
                 <p class="descripcion">Construye tu legado en el gimnasio. Un pre-entreno completo que apoya todos los aspectos de tu rendimiento: energía, bombeo, fuerza y enfoque.</p>
                 <p class="precio">$110.000</p>
-                <button class="add-to-cart" data-product="Legacy 50 Serv" data-price="110000" data-image="legacy50.jpg">Añadir al Carrito</button>
+                <button class="add-to-cart" data-product="Legacy 50 Serv" data-price="110000" data-image="images/legacy50.jpg">Añadir al Carrito</button>
             </div>
         </div>
     </section>
 </main>
 
 
-        <footer id="contacto">
-    <h2>Contacto</h2>
-    <p>¿Tienes preguntas o quieres hacer un pedido mayorista? ¡Escríbenos!</p>
-    
-    <div>
-        <p><strong>Teléfono:</strong> <a href="tel:+573105708491">+57 310 570 8491</a></p>
-    </div>
+       <footer id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas o quieres hacer un pedido mayorista? ¡Escríbenos!</p>
+        <div>
+            <p><strong>Teléfono:</strong> <a href="tel:+573105708491">+57 310 570 8491</a></p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/n.a.j.nutrition/?igsh=MXNobjkzZ2NyY3hoeg%3D%3D#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/573105708491" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2025 N.A.J. NUTRITION. Todos los derechos reservados.</p>
+    </footer>
 
-    <div class="social-media">
-    </a>
-    <a href="https://www.instagram.com/n.a.j.nutrition/?igsh=MXNobjkzZ2NyY3hoeg%3D%3D#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://wa.me/573105708491" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
+    <div id="notification-container"></div>
 
-    <p class="copyright">&copy; N.A.J. NUTRITION. Todos los derechos reservados.</p>
-</footer>
-        <div id="notification-container"></div>
+    <button id="open-cart-btn" class="floating-cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+    </button>
 
-        <button id="open-cart-btn" class="floating-cart-btn">
-    <i class="fas fa-shopping-cart"></i>
-</button>
-        <script src="app.js"></script>
+    <a href="#inicio" id="back-to-top-btn" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="app.js"></script>
 
 </body>
 </html>
-</body>
-
-</html>
-
