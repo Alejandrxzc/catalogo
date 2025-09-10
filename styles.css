@@ -19,7 +19,7 @@ header {
     padding: 20px 0; 
     text-align: center; 
     position: relative;
-    background-image: url('images/fondo.gif');
+    background-image: url('fondo.gif');
     background-size: cover;
     background-position: center;
 }
@@ -44,7 +44,7 @@ header::before {
     position: relative; 
     height: 85vh; 
     color: white; 
-    background-image: url('images/landonorriss.png');
+    background-image: url('landonorriss.png');
     background-size: cover; 
     background-position: center 30%; 
     display: flex;
@@ -820,3 +820,4 @@ footer .copyright {
     background-color: #555;
 
 }
+
