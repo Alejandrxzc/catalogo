@@ -6,29 +6,24 @@ body {
     background-color: #646464; 
     color: #333; 
     background-image: 
-        linear-gradient(rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.7)), /* Overlay oscuro */
-        url('images/fondo2.jpg'); /* Tu imagen de fondo */
-    
-    background-size: cover; /* Cubre toda la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-attachment: fixed; /* ¡Este es el truco para que el fondo no se mueva! */
+        linear-gradient(rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.7)),
+        url('images/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
-
 
 header {
     background-color: #1a1a1a; 
     color: white; 
     padding: 20px 0; 
     text-align: center; 
-    
-    /* --- AÑADE ESTAS PROPIEDADES --- */
-    position: relative; /* Necesario para que el overlay funcione */
-    background-image: url('images/fondo.gif'); /* <-- ¡CAMBIA ESTO POR EL NOMBRE DE TU IMAGEN! */
-    background-size: cover; /* Hace que la imagen cubra todo el espacio */
-    background-position: center; /* Centra la imagen */
+    position: relative;
+    background-image: url('images/fondo.gif');
+    background-size: cover;
+    background-position: center;
 }
 
-/* AÑADE ESTA NUEVA REGLA: Overlay oscuro para legibilidad */
 header::before {
     content: '';
     position: absolute;
@@ -36,14 +31,13 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Negro con 50% de opacidad */
-    z-index: 1; /* Se pone entre el fondo y el contenido */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-/* AÑADE ESTA NUEVA REGLA: Para asegurar que el texto esté al frente */
 #logo-link, header p {
     position: relative;
-    z-index: 2; /* Pone el contenido por encima del overlay */
+    z-index: 2;
 }
 
 #hero {
@@ -53,14 +47,11 @@ header::before {
     background-image: url('images/landonorriss.png');
     background-size: cover; 
     background-position: center 30%; 
-    
-    
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-
 
 #hero::before {
     content: '';
@@ -72,7 +63,6 @@ header::before {
     background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1; 
 }
-
 
 .hero-content {
     position: relative; 
@@ -92,7 +82,6 @@ header::before {
     margin-bottom: 30px;
 }
 
-
 .cta-button {
     background-color: #e76f51;
     color: white;
@@ -107,6 +96,7 @@ header::before {
 .cta-button:hover {
     background-color: #f4a261;
 }
+
 header h1 {
     margin: 0;
     font-size: 3.2em; 
@@ -116,6 +106,7 @@ header h1 {
     text-decoration: none; 
     color: inherit; 
 }
+
 nav {
     background-color: #333;
     padding: 15px;
@@ -133,7 +124,6 @@ nav a:hover {
     text-decoration: underline; 
 }
 
-
 main {
     padding: 20px;
 }
@@ -144,7 +134,6 @@ main h2 {
     margin-bottom: 30px;
 }
 
-
 .productos-grid {
     display: flex;
     flex-wrap: wrap;
@@ -152,8 +141,6 @@ main h2 {
     gap: 25px;
 }
 
-
-/* --- Estilo de Cada Tarjeta de Producto (CORREGIDO) --- */
 .producto {
     background-color: white;
     border: 1px solid #ddd;
@@ -163,11 +150,9 @@ main h2 {
     padding: 20px;
     text-align: center;
     transition: transform 0.2s;
-    
-    /* --- LÍNEAS CLAVE AÑADIDAS --- */
-    display: flex; /* Activa Flexbox */
-    flex-direction: column; /* Apila los elementos verticalmente */
-    justify-content: space-between; /* Distribuye el espacio verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .producto:hover {
@@ -234,7 +219,6 @@ footer p {
     color: #ccc; 
 }
 
-
 footer a {
     color: #e76f51;
     text-decoration: none;
@@ -244,16 +228,15 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
 .social-media a {
     color: white;
     margin: 0 15px;
-    font-size: 1.5em; /* Un poco más grandes */
-    transition: color 0.3s ease; /* Transición suave de color */
+    font-size: 1.5em;
+    transition: color 0.3s ease;
 }
 
 .social-media a:hover {
-    color: #e76f51; /* Cambia de color al pasar el mouse */
+    color: #e76f51;
     text-decoration: none;
 }
 
@@ -262,6 +245,7 @@ footer .copyright {
     font-size: 0.8em;
     color: #888; 
 }
+
 .carrito-sidebar {
     position: fixed; 
     top: 0;
@@ -278,7 +262,6 @@ footer .copyright {
     display: flex;
     flex-direction: column;
 }
-
 
 .carrito-sidebar.open {
     transform: translateX(0);
@@ -300,23 +283,23 @@ footer .copyright {
 
 #cart-items li {
     display: flex;
-    align-items: center; /* Centra los elementos verticalmente */
-    padding: 15px 5px; /* Más espacio */
+    align-items: center;
+    padding: 15px 5px;
     border-bottom: 1px solid #ffffff;
 }
 
 .cart-item-image {
-    width: 60px;  /* Ancho de la imagen en el carrito */
-    height: 60px; /* Alto de la imagen en el carrito */
-    object-fit: contain; /* Se asegura que la imagen se vea completa sin deformarse */
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
     border-radius: 5px;
-    margin-right: 15px; /* Espacio entre la imagen y el texto */
+    margin-right: 15px;
 }
 
 .cart-item-details {
-    flex-grow: 1; /* Hace que este div ocupe el espacio disponible */
+    flex-grow: 1;
     display: flex;
-    flex-direction: column; /* Pone el nombre encima del precio */
+    flex-direction: column;
 }
 
 .cart-item-name {
@@ -332,10 +315,9 @@ footer .copyright {
 .cart-item-quantity {
     font-weight: bold;
     font-size: 1.1em;
-    margin-left: 15px; /* Espacio para separar la cantidad */
+    margin-left: 15px;
 }
 
-/* Estilo para el mensaje de carrito vacío */
 #cart-items .cart-empty-msg {
     color: #ffffff;
     text-align: center;
@@ -350,12 +332,11 @@ footer .copyright {
     margin-top: 20px;
 }
 
-/* Cambia #clear-cart-btn por #checkout-btn */
 #checkout-btn {
-    display: block; /* Para que ocupe todo el ancho */
-    text-align: center; /* Centra el texto */
-    text-decoration: none; /* Quita el subrayado del enlace */
-    background-color: #2a9d8f; /* Un color verde para finalizar compra */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #2a9d8f;
     color: white;
     border: none;
     padding: 15px;
@@ -363,7 +344,7 @@ footer .copyright {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px; /* Margen para separarlo del total */
+    margin-top: 10px;
 }
 
 #checkout-btn:hover {
@@ -399,26 +380,26 @@ footer .copyright {
     cursor: pointer;
     color: #888;
 }
-
 .close-btn:hover {
     color: #333;
 }
+
 .categoria-productos {
-    padding: 40px 20px; /* Espacio interno */
-    margin-top: 20px; /* Margen superior para separar de la sección anterior */
+    padding: 40px 20px;
+    margin-top: 20px;
 }
 
 .categoria-productos:first-child {
-    margin-top: 0; /* La primera sección no necesita margen arriba */
+    margin-top: 0;
 }
 
 .categoria-productos h2 {
     text-align: center;
     font-size: 2.5em;
-    margin-bottom: 40px; /* Espacio debajo del título de la categoría */
+    margin-bottom: 40px;
     color: #ffffff;
 }
-/* Estilos para controles de item en el carrito */
+
 .cart-item-controls {
     display: flex;
     align-items: center;
@@ -442,7 +423,6 @@ footer .copyright {
 .remove-item-btn:hover {
     background: #d9534f;
 }
-/* --- Estilos para la Página de Checkout --- */
 
 .checkout-page h1 {
     text-align: center;
@@ -453,22 +433,22 @@ footer .copyright {
 
 .checkout-container {
     display: flex;
-    flex-wrap: wrap; /* Para que se adapte en móviles */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor */
+    margin: 0 auto;
     padding: 20px;
     align-items: flex-start;
 }
 
 .form-section {
-    flex: 2; /* Ocupa 2/3 del espacio */
+    flex: 2;
     min-width: 300px;
 }
 
 .summary-section {
-    flex: 1; /* Ocupa 1/3 del espacio */
+    flex: 1;
     min-width: 300px;
     background-color: #383838;
     padding: 20px;
@@ -478,11 +458,9 @@ footer .copyright {
     flex-direction: column;
 }
 
-/* --- AÑADE ESTA NUEVA REGLA --- */
 #summary-items {
-    flex-grow: 1; /* Esta es la línea clave que empuja el total hacia abajo */
+    flex-grow: 1;
 }
-
 
 .form-section h2, .summary-section h2 {
     font-size: 1.8em;
@@ -492,7 +470,6 @@ footer .copyright {
     margin-bottom: 20px;
 }
 
-/* Estilos del Formulario */
 .form-group {
     margin-bottom: 20px;
 }
@@ -529,7 +506,6 @@ footer .copyright {
     background-color: #d9534f;
 }
 
-/* Estilos del Resumen de Pedido */
 .summary-item, .summary-total {
     display: flex;
     justify-content: space-between;
@@ -543,25 +519,21 @@ footer .copyright {
     border-top: 2px solid #ffffff;
     margin-top: 10px;
 }
-/* --- Estilos para Controles de Cantidad en el Carrito --- */
 
-/* Contenedor que agrupa los botones +,-, la cantidad y el bote de basura */
 .cart-item-controls {
     display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre los elementos */
+    gap: 8px;
     margin-left: 15px;
 }
 
-/* Estilo para el número de la cantidad */
 .item-quantity {
     font-weight: bold;
     font-size: 1.1em;
-    min-width: 20px; /* Ancho mínimo para que no se mueva al cambiar de 9 a 10 */
+    min-width: 20px;
     text-align: center;
 }
 
-/* Estilo común para los botones + y - */
 .quantity-btn {
     background-color: #ddd;
     color: #333;
@@ -580,52 +552,30 @@ footer .copyright {
     background-color: #ccc;
 }
 
-/* El botón de eliminar que ya teníamos, lo ajustamos un poco */
-.remove-item-btn {
-    background: #e76f51;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex; /* Para centrar el ícono de basura */
-    justify-content: center;
-    align-items: center;
-}
-
-.remove-item-btn:hover {
-    background: #d9534f;
-}
-/* --- Estilos para Notificaciones "Toast" --- */
-
 #notification-container {
-    position: fixed; /* Fijo en la pantalla */
+    position: fixed;
     bottom: 20px;
     left: 20px;
-    z-index: 2000; /* Por encima de todo, incluso del carrito flotante */
+    z-index: 2000;
     display: flex;
-    flex-direction: column-reverse; /* Las nuevas notificaciones aparecen arriba de las viejas */
+    flex-direction: column-reverse;
 }
 
 .notification {
-    background-color: #616161; /* Un verde que inspira confianza */
+    background-color: #616161;
     color: white;
     padding: 15px 25px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     margin-top: 10px;
-    opacity: 0; /* Empieza invisible para la animación */
+    opacity: 0;
     animation: slideIn 0.5s ease-out forwards, fadeOut 0.5s ease-in 3s forwards;
-    /* Animación: entra en 0.5s, espera 3s, sale en 0.5s */
 }
 
 .notification strong {
     font-weight: 700;
 }
 
-/* Animación de entrada */
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -637,76 +587,56 @@ footer .copyright {
     }
 }
 
-/* Animación de salida */
 @keyframes fadeOut {
     from {
         opacity: 1;
     }
     to {
         opacity: 0;
-        /* No la movemos, solo la desvanecemos */
     }
 }
-/* ================================================================== */
-/* === ESTILOS PARA DISPOSITIVOS MÓVILES (RESPONSIVE DESIGN) === */
-/* ================================================================== */
 
 @media (max-width: 768px) {
-
-    /* --- Ajustes Generales de Texto --- */
-    /* Reducimos un poco los tamaños de fuente base para que no se vean tan grandes */
     header h1 {
-        font-size: 2.5em; /* Más pequeño que el 3.2em de escritorio */
+        font-size: 2.5em;
     }
 
     .hero-content h2 {
-        font-size: 2.8em; /* Más pequeño que el 3.5em de escritorio */
+        font-size: 2.8em;
     }
 
     .categoria-productos h2 {
         font-size: 2em;
     }
 
-
-    /* --- Barra de Navegación --- */
-    /* Hacemos que los enlaces no sean tan anchos y tengan algo más de espacio */
     nav {
         padding: 10px;
     }
+
     nav a {
-        margin: 0 8px; /* Reducimos el margen entre enlaces */
+        margin: 0 8px;
         font-size: 0.9em;
     }
 
-
-    /* --- Catálogo de Productos --- */
-    /* En lugar de varias columnas, hacemos que cada producto ocupe casi todo el ancho */
     .producto {
-        width: 85%; /* Hacemos la tarjeta más ancha */
-        max-width: 350px; /* Pero con un límite para que no sea excesiva */
+        width: 85%;
+        max-width: 350px;
     }
 
-
-    /* --- Carrito de Compras Lateral --- */
-    /* Hacemos que el carrito ocupe casi toda la pantalla para ser más usable */
     .carrito-sidebar {
-        width: 95%; /* Ocupa el 95% del ancho de la pantalla */
+        width: 95%;
     }
 
-
-    /* --- Página de Checkout --- */
-    /* Cambiamos el diseño de 2 columnas a 1 sola columna vertical */
     .checkout-container {
-        flex-direction: column; /* Apila el formulario y el resumen verticalmente */
+        flex-direction: column;
         gap: 20px;
     }
     
     .checkout-page h1 {
-        font-size: 2.2em; /* Reducimos el título principal */
+        font-size: 2.2em;
     }
-
 }
-/* --- Estilos para Instrucciones de Pago --- */
+
 #payment-instructions {
     background-color: #e9e9e9;
     padding: 25px;
@@ -716,7 +646,7 @@ footer .copyright {
 }
 
 #payment-instructions.hidden {
-    display: none; /* Oculta las instrucciones por defecto */
+    display: none;
 }
 
 #payment-instructions h3 {
@@ -758,58 +688,39 @@ footer .copyright {
 }
 
 #nequi-qr {
-    width: 370px; /* <-- Aumentamos el tamaño */
-    height:370px; /* <-- Aumentamos el tamaño */
-    padding: 0px; /* Opcional: Un espacio entre el QR y el borde */
-    background-color: white; /* Asegura que el fondo del QR sea blanco */
-    
-    /* Borde 1: El borde interior morado */
-    border: 5px solid #8A2BE2; /* Un morado brillante */
-
-    /* Borde 2: El truco para el borde exterior negro */
+    width: 370px;
+    height:370px;
+    padding: 0px;
+    background-color: white;
+    border: 5px solid #8A2BE2;
     box-shadow: 0 0 0 3px black;
-    
-    border-radius: 15px; /* Opcional: Redondea las esquinas */
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    border-radius: 15px;
+    box-sizing: border-box;
 }
-/* --- Estilos para Precios con Descuento --- */
+
 .precio-original {
-    font-size: 0.8em; /* Un poco más pequeño */
-    text-decoration: line-through; /* Tachado */
-    color: #686868; /* Un color gris para que no destaque tanto */
-    margin-right: 10px; /* Espacio entre los dos precios */
+    font-size: 0.8em;
+    text-decoration: line-through;
+    color: #686868;
+    margin-right: 10px;
 }
 
 .precio-oferta {
     font-weight: bold;
-    color: #2a9d8f; /* El color que ya usábamos para el precio */
+    color: #2a9d8f;
 }
-/* --- Estilos para el Producto Destacado --- */
 
 .producto-destacado {
-    /* Lo hacemos un 5% más grande que el resto */
     transform: scale(1.05); 
-    
-    /* Le damos un borde de un color llamativo para que resalte */
     border: 3px solid #e76f51; 
-    
-    /* Hacemos la sombra un poco más pronunciada */
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    position: relative; 
+    overflow: hidden;
 }
 
-/* Un pequeño ajuste para que no se vea cortado al pasar el mouse por encima */
 .productos-grid {
     padding-top: 20px;
     padding-bottom: 20px;
-}
-/* --- Cinta de Oferta para el Producto Destacado --- */
-
-.producto-destacado {
-    /* ... (los estilos que ya pusimos arriba) ... */
-    
-    /* Añadimos estas dos propiedades para que la cinta se posicione correctamente */
-    position: relative; 
-    overflow: hidden; /* Oculta lo que se salga de la tarjeta */
 }
 
 .producto-destacado::before {
@@ -817,80 +728,71 @@ footer .copyright {
     position: absolute;
     top: 25px;
     right: -30px;
-    background-color: #8A2BE2; /* Morado */
+    background-color: #8A2BE2;
     color: white;
     font-weight: bold;
     font-size: 1em;
     padding: 5px 40px;
-    transform: rotate(45deg); /* La gira en diagonal */
+    transform: rotate(45deg);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 10;
 }
-/* --- Estilos para la Barra de Búsqueda (VERSIÓN FINAL) --- */
 
 .search-container {
     padding: 20px;
     max-width: 800px;
     margin: 20px auto 40px auto;
-    position: relative; /* Clave para posicionar el ícono */
+    position: relative;
 }
 
-/* El ícono de la lupa */
 .search-container .fa-search {
     position: absolute;
-    left: 35px; /* Distancia desde la izquierda */
+    left: 35px;
     top: 50%;
     transform: translateY(-50%);
     color: #aaa;
     font-size: 1.1em;
-    z-index: 3; /* Asegura que esté visible */
+    z-index: 3;
 }
-
-/* El campo de texto */
 #search-input {
     width: 100%;
-    padding: 15px 20px 15px 60px; /* Padding izquierdo aumentado para no chocar con la lupa */
+    padding: 15px 20px 15px 60px;
     font-size: 1.2em;
     border-radius: 50px;
     border: 2px solid #555;
     background-color: #333;
     color: white;
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box; /* Importante */
+    box-sizing: border-box;
 }
 
 #search-input::placeholder {
     color: #aaa;
 }
-/* --- Estilos para Botón "Inteligente" (cuando el producto ya está en el carrito) --- */
 
-/* Estilo para el botón de un producto que ya está en el carrito */
 .add-to-cart.in-cart {
-    background-color: #2a9d8f; /* Un verde para indicar "éxito" o "añadido" */
-    cursor: not-allowed; /* Cambia el cursor para indicar que no se puede volver a hacer clic */
+    background-color: #2a9d8f;
+    cursor: not-allowed;
 }
 
-/* Evita que el botón cambie de color al pasar el mouse por encima cuando ya está en el carrito */
 .add-to-cart.in-cart:hover {
     background-color: #268a7e; 
 }
-/* --- Estilos para Lazy Loading con Animación --- */
 
 .lazy-load {
-    opacity: 0; /* Empieza totalmente transparente */
-    transition: opacity 0.5s ease-in-out; /* Una transición suave de 0.5 segundos */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .lazy-load.visible {
-    opacity: 1; /* Se vuelve totalmente visible cuando carga */
+    opacity: 1;
 }
-/* --- Estilos para el Botón "Volver Arriba" --- */
 
 #back-to-top-btn {
     position: fixed;
     bottom: 100px;
     right: 30px;
-    background-color: #333; /* Un gris oscuro, diferente al del carrito */
+    background-color: #333;
     color: white;
     width: 50px;
     height: 50px;
@@ -901,16 +803,13 @@ footer .copyright {
     font-size: 20px;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 998; /* Un poco por debajo del botón del carrito */
-
-    /* Lo hacemos invisible por defecto */
+    z-index: 998;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px); /* Ligero efecto de subida */
+    transform: translateY(20px);
     transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
 }
 
-/* Estilo para cuando el botón se hace visible */
 #back-to-top-btn.visible {
     opacity: 1;
     visibility: visible;

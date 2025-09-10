@@ -1,31 +1,22 @@
-// =================================================================
-// ARCHIVO checkout.js COMPLETO Y CORREGIDO
-// =================================================================
-
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Selectores
     const summaryItemsContainer = document.getElementById('summary-items');
     const summaryTotalSpan = document.querySelector('.summary-total span:last-child');
     const checkoutForm = document.getElementById('checkout-form');
     const paymentInstructions = document.getElementById('payment-instructions');
     const paymentTotal = document.getElementById('payment-total');
     const whatsappBtn = document.querySelector('.whatsapp-btn');
-    const phoneInput = document.getElementById('phone'); // Selector para el campo de teléfono
+    const phoneInput = document.getElementById('phone');
 
-    // --- LÓGICA PARA VALIDAR EL CAMPO DE TELÉFONO ---
     if (phoneInput) {
         phoneInput.addEventListener('input', (e) => {
-            // Reemplaza cualquier caracter que NO sea un número por una cadena vacía
             e.target.value = e.target.value.replace(/[^0-9]/g, '');
         });
     }
 
-    // Leemos el carrito desde localStorage
     const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
     let total = 0;
 
-    // Función para renderizar el resumen del pedido
     function renderSummary() {
         if (!summaryItemsContainer) return; 
         
@@ -52,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Listener para el formulario
     if (checkoutForm) {
         checkoutForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -66,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = `¡Hola! Quiero confirmar mi pedido:\n\n*Nombre:* ${name}\n*Correo:* ${email}\n*Dirección:* ${address}\n*Ciudad:* ${city}\n*Teléfono:* ${phone}\n\n*Total a Pagar:* $${total.toLocaleString('es-CO')}\n\nAdjunto mi comprobante de pago. ¡Gracias!`;
             const encodedMessage = encodeURIComponent(message);
             
-            const whatsappNumber = '573105708491'; // <-- ¡RECUERDA CAMBIAR ESTE NÚMERO POR TU WHATSAPP!
+            const whatsappNumber = '573105708491';
             const newWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             whatsappBtn.href = newWhatsappUrl;
 
@@ -76,6 +66,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Renderizar el resumen al cargar la página
     renderSummary();
 });

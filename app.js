@@ -1,10 +1,5 @@
-// =================================================================
-// ARCHIVO app.js COMPLETO Y UNIFICADO
-// =================================================================
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- VARIABLES Y SELECTORES ---
     let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
     const allProductsOnPage = document.querySelectorAll('.producto');
     const cartSidebar = document.querySelector('.carrito-sidebar');
@@ -15,13 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeCartButton = document.getElementById('close-cart-btn');
     const notificationContainer = document.getElementById('notification-container');
 
-    // --- LÓGICA DEL BUSCADOR DE PRODUCTOS ---
     const searchForm = document.getElementById('search-form');
     const searchInput = document.getElementById('search-input');
     const noResultsMessage = document.getElementById('no-results-message');
     const productSections = document.querySelectorAll('.categoria-productos');
 
-    if (searchForm) { // Previene errores si estamos en checkout.html
+    if (searchForm) {
         searchForm.addEventListener('submit', (e) => {
             e.preventDefault();
         });
@@ -57,30 +51,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- AÑADE ESTE CÓDIGO PARA EL BOTÓN "VOLVER ARRIBA" ---
     const backToTopButton = document.getElementById('back-to-top-btn');
 
     if (backToTopButton) {
-        // Mostrar u ocultar el botón al hacer scroll
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) { // Si el scroll es mayor a 300px
+            if (window.scrollY > 300) {
                 backToTopButton.classList.add('visible');
             } else {
                 backToTopButton.classList.remove('visible');
             }
         });
 
-        // Hacer scroll suave hacia arriba al hacer clic
         backToTopButton.addEventListener('click', (e) => {
-            e.preventDefault(); // Previene el salto brusco del enlace
+            e.preventDefault();
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // ¡La magia del scroll suave!
+                behavior: 'smooth'
             });
         });
     }
 
-    // --- FUNCIONES ---
     function updateButtonStates() {
         allProductsOnPage.forEach(productCard => {
             const productName = productCard.querySelector('h3').textContent;
@@ -193,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cartSidebar) cartSidebar.classList.remove('open');
     }
 
-    // --- EVENT LISTENERS ---
     if (addToCartButtons.length) {
         addToCartButtons.forEach(button => button.addEventListener('click', addToCart));
     }
@@ -207,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeCartButton.addEventListener('click', closeCart);
     }
     
-    // --- LÓGICA PARA LA CARGA PEREZOSA (LAZY LOADING) ---
     const lazyImages = document.querySelectorAll('img.lazy-load');
     if (lazyImages.length > 0) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -227,7 +215,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- INICIALIZACIÓN ---
     renderCart();
     updateButtonStates();
 });
